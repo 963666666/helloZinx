@@ -2,10 +2,21 @@ package znet
 
 import (
 	"hello_zinx/ziface"
-	ziface2 "zinx/ziface"
 )
 
 type Request struct {
 	conn ziface.IConnection
-	msg ziface2.IMessage
+	msg ziface.IMessage
+}
+
+func (request *Request)GetConn() ziface.IConnection {
+	return request.conn
+}
+
+func (request *Request)GetData() []byte {
+	return request.msg.GetData()
+}
+
+func (request *Request) GetMsgId() uint32 {
+	return request.msg.GetMsgId()
 }
