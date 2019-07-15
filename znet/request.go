@@ -1,7 +1,7 @@
 package znet
 
 import (
-	"hello_zinx/ziface"
+	"helloZinx/ziface"
 )
 
 type Request struct {
@@ -9,7 +9,7 @@ type Request struct {
 	msg ziface.IMessage
 }
 
-func (request *Request)GetConn() ziface.IConnection {
+func (request *Request)GetConnection() ziface.IConnection {
 	return request.conn
 }
 

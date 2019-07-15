@@ -1,9 +1,9 @@
 package ziface
 
-import "hello_zinx/ziface"
-
 type IMsgHandler interface {
-	DoMsgHandler(request ziface.IRequest)
+	//DoMsgHandler(request IRequest)
+	StartWorkerPool()
+	SendMsgToTaskQueue(request IRequest) //将消息给TaskQueue, 由worker进行处理
 }
 
 

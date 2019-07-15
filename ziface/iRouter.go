@@ -1,7 +1,7 @@
 package ziface
 
 type IRouter interface {
-	BeforeHandler()
-	Handler()
-	AfterHandler()
+	BeforeHandler(request IRequest)
+	Handler(request IRequest)
+	AfterHandler(request IRequest)
 }

@@ -9,7 +9,7 @@ type IConnection interface {
 	Stop()
 
 	//从当前连接获取原始的socket TCPConn
-	GetTCPConnection() *net.Conn
+	GetTCPConnection() *net.TCPConn
 
 	//获取当前连接的ID
 	GetConnId() uint32
@@ -22,4 +22,4 @@ type IConnection interface {
 
 }
 
-type HandelFunc func(conn *net.TCPConn, []byte, int) error
+type HandelFunc func(*net.TCPConn, []byte, int) error
